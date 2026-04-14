@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandbook - ESaúde Assist</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            /* Cores Principais */
+            --primary: #3f7894;
+            --primary-dark: #2d5a6d;
+            --primary-darker: #1e4050;
+            --secondary: #eaa53f;
+            --secondary-dark: #d89230;
+            
+            /* Cores Neutras */
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-light: rgba(0, 0, 0, 0.08);
+            
+            /* Gradientes */
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--primary-darker) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            
+            /* Tipografia */
+            --font-main: 'Poppins', sans-serif;
+            
+            /* Espaçamentos e Radius */
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --radius-full: 9999px;
+            
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Layout do Brandbook */
+        .brandbook-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--border-light);
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .sidebar-logo {
+            margin-bottom: 3rem;
+        }
+
+        .sidebar-logo img {
+            max-height: 48px;
+            max-width: 100%;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            border-radius: var(--radius-lg);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(63, 120, 148, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-link i {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 4rem;
+            max-width: 1200px;
+        }
+
+        .section {
+            margin-bottom: 6rem;
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        /* 1. Introdução */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .intro-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .intro-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+        }
+
+        /* 2. Cores */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .color-card {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .color-preview {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .color-info {
+            padding: 1.5rem;
+            background: var(--bg-white);
+        }
+
+        .color-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .color-value {
+            display: flex;
+            justify-content: space-between;
+            font-family: monospace;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            padding: 4px 8px;
+            background: var(--bg-light);
+            border-radius: 4px;
+        }
+
+        /* 3. Tipografia */
+        .typography-preview {
+            background: var(--bg-light);
+            padding: 3rem;
+            border-radius: var(--radius-2xl);
+        }
+
+        .font-family-display {
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .type-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .type-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            align-items: baseline;
+            gap: 2rem;
+        }
+
+        .type-label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            font-family: monospace;
+        }
+
+        h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+        h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+        .body-text { font-size: 1rem; font-weight: 400; line-height: 1.6; }
+
+        /* 4. Logo */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .logo-card {
+            padding: 3rem;
+            border-radius: var(--radius-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+            border: 1px solid var(--border-light);
+        }
+
+        .logo-card.light {
+            background: var(--bg-white);
+        }
+
+        .logo-card.dark {
+            background: var(--gradient-primary);
+        }
+        
+        .logo-card img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .logo-card.dark img {
+            filter: brightness(0) invert(1);
+        }
+
+        /* 5. Componentes */
+        .components-grid {
+            display: grid;
+            gap: 3rem;
+        }
+        
+        .component-row {
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: var(--radius-xl);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(234, 165, 63, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Cards */
+        .glass-card {
+            background: var(--gradient-primary);
+            padding: 2rem;
+            border-radius: var(--radius-2xl);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            filter: blur(20px);
+        }
+
+        /* 6. Estilo Visual Elements */
+        .visual-elements {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(63, 120, 148, 0.1);
+            color: var(--primary);
+        }
+
+        .icon-box.secondary {
+            background: rgba(234, 165, 63, 0.1);
+            color: var(--secondary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="brandbook-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="assets/4fc7091af_pic-logo-esaude-v2_3b9bb24a4d72.png" alt="ESaúde Assist">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#intro" class="nav-link active"><i data-lucide="book"></i> Introdução</a></li>
+                <li class="nav-item"><a href="#logo" class="nav-link"><i data-lucide="image"></i> Logotipo</a></li>
+                <li class="nav-item"><a href="#colors" class="nav-link"><i data-lucide="palette"></i> Cores</a></li>
+                <li class="nav-item"><a href="#typography" class="nav-link"><i data-lucide="type"></i> Tipografia</a></li>
+                <li class="nav-item"><a href="#style" class="nav-link"><i data-lucide="layout"></i> Estilo Visual</a></li>
+                <li class="nav-item"><a href="#components" class="nav-link"><i data-lucide="mouse-pointer"></i> Componentes UI</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Introdução -->
+            <section id="intro" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">A Marca ESaúde Assist</h2>
+                    <p class="section-subtitle">Democratizando o acesso à saúde através da tecnologia.</p>
+                </div>
+                
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h3><i data-lucide="target"></i> Propósito</h3>
+                        <p>Nascemos com a missão de democratizar o acesso à saúde de qualidade. Combinamos expertise médica com inovação digital para oferecer um ecossistema completo de cuidados, disponível 24/7, de forma simples, ágil e humanizada.</p>
+                    </div>
+                    <div class="intro-card">
+                        <h3><i data-lucide="message-circle"></i> Tom de Voz</h3>
+                        <p>Nosso tom é <strong>acolhedor, profissional, inovador e confiável</strong>. Falamos com clareza, evitando jargões médicos complexos, sempre próximos ao paciente e reforçando o cuidado contínuo.</p>
+                    </div>
+                    <div class="intro-card">
+                        <h3><i data-lucide="heart"></i> Personalidade</h3>
+                        <p>A ESaúde é transparente, segura, tecnológica e humana. Somos o parceiro que está em cada etapa da jornada de bem-estar do nosso paciente, focados em soluções integradas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logo -->
+            <section id="logo" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Logotipo</h2>
+                    <p class="section-subtitle">Aplicações e usos da nossa assinatura visual.</p>
+                </div>
+                
+                <div class="logo-grid">
+                    <div class="logo-card light">
+                        <div>
+                            <img src="assets/4fc7091af_pic-logo-esaude-v2_3b9bb24a4d72.png" alt="Logo Principal">
+                            <p style="text-align: center; margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">Fundo Claro (Principal)</p>
+                        </div>
+                    </div>
+                    <div class="logo-card dark">
+                        <div>
+                            <img src="assets/4fc7091af_pic-logo-esaude-v2_3b9bb24a4d72.png" alt="Logo Negativo">
+                            <p style="text-align: center; margin-top: 1rem; color: rgba(255,255,255,0.7); font-size: 0.9rem;">Fundo Escuro (Negativo)</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.2rem;">Área de Proteção</h3>
+                    <p style="color: var(--text-gray);">Para garantir a legibilidade, o logo deve sempre manter uma área de respiro equivalente à altura do ícone que compõe a marca, sem elementos invasivos nas proximidades.</p>
+                </div>
+            </section>
+
+            <!-- Cores -->
+            <section id="colors" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Paleta de Cores</h2>
+                    <p class="section-subtitle">As cores traduzem confiança (Azul) e proximidade/energia (Dourado).</p>
+                </div>
+
+                <div class="color-grid">
+                    <!-- Primary -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: var(--primary);"></div>
+                        <div class="color-info">
+                            <h3 class="color-name">Azul ESaúde (Primary)</h3>
+                            <div class="color-value"><span>HEX</span><span>#3F7894</span></div>
+                            <div class="color-value"><span>RGB</span><span>63, 120, 148</span></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Secondary -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: var(--secondary);"></div>
+                        <div class="color-info">
+                            <h3 class="color-name">Dourado (Secondary)</h3>
+                            <div class="color-value"><span>HEX</span><span>#EAA53F</span></div>
+                            <div class="color-value"><span>RGB</span><span>234, 165, 63</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Dark Blue -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: var(--primary-dark);"></div>
+                        <div class="color-info">
+                            <h3 class="color-name">Azul Escuro (Gradient)</h3>
+                            <div class="color-value"><span>HEX</span><span>#2D5A6D</span></div>
+                            <div class="color-value"><span>RGB</span><span>45, 90, 109</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Neutral Dark -->
+                    <div class="color-card">
+                        <div class="color-preview" style="background-color: var(--text-dark);"></div>
+                        <div class="color-info">
+                            <h3 class="color-name">Texto Escuro</h3>
+                            <div class="color-value"><span>HEX</span><span>#1A1A1A</span></div>
+                            <div class="color-value"><span>RGB</span><span>26, 26, 26</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 3rem 0 1.5rem; font-size: 1.2rem;">Gradiente Oficial</h3>
+                <div style="height: 100px; border-radius: var(--radius-xl); background: var(--gradient-primary); border: 1px solid var(--border-light);"></div>
+                <p style="margin-top: 1rem; color: var(--text-gray); font-size: 0.9rem;">Usado em seções herói, banners e cartões de planos Master.</p>
+            </section>
+
+            <!-- Tipografia -->
+            <section id="typography" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Tipografia</h2>
+                    <p class="section-subtitle">Utilizamos a família tipográfica Poppins para garantir uma leitura moderna e acessível.</p>
+                </div>
+
+                <div class="typography-preview">
+                    <div class="font-family-display">
+                        Poppins
+                    </div>
+                    
+                    <div class="type-scale">
+                        <div class="type-item">
+                            <span class="type-label">H1</span>
+                            <h1>Inovação em Saúde</h1>
+                        </div>
+                        <div class="type-item">
+                            <span class="type-label">H2</span>
+                            <h2>Cuide de quem você ama</h2>
+                        </div>
+                        <div class="type-item">
+                            <span class="type-label">H3</span>
+                            <h3>Pronto Atendimento Online</h3>
+                        </div>
+                        <div class="type-item">
+                            <span class="type-label">Body</span>
+                            <p class="body-text">Transformamos o cuidado com sua saúde através de soluções digitais inteligentes. Consultas médicas, exames e acompanhamento completo na palma da sua mão com segurança e agilidade.</p>
+                        </div>
+                        <div class="type-item">
+                            <span class="type-label">Small</span>
+                            <p style="font-size: 0.875rem; color: var(--text-gray);">* Condições aplicáveis conforme regulamento do plano assinado.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Estilo Visual -->
+            <section id="style" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Estilo Visual (Direção de Arte)</h2>
+                    <p class="section-subtitle">Componentes visuais e comportamento estético.</p>
+                </div>
+
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h3><i data-lucide="image"></i> Fotografia</h3>
+                        <p>Imagens brilhantes, ambientes limpos, profissionais de saúde com olhar empático e uso de tecnologia moderna. Prioridade para cenas reais de pacientes e médicos.</p>
+                    </div>
+                    <div class="intro-card">
+                        <h3><i data-lucide="layers"></i> Formas e Bordas</h3>
+                        <p>Uso extensivo de bordas arredondadas (radius-xl e 2xl) e círculos para transmitir suavidade e cuidado. Uso de "glassmorphism" e blurs de fundo para modernidade.</p>
+                    </div>
+                    <div class="intro-card">
+                        <h3><i data-lucide="wind"></i> Comportamento</h3>
+                        <p>Micro-interações fluidas (hovers que elevam cards, sombras suaves com cores da marca, transições suaves). Tudo deve parecer leve e responsivo.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Ícones (Lucide System)</h3>
+                    <div class="visual-elements">
+                        <div class="icon-box"><i data-lucide="stethoscope"></i></div>
+                        <div class="icon-box secondary"><i data-lucide="video"></i></div>
+                        <div class="icon-box"><i data-lucide="heart-handshake"></i></div>
+                        <div class="icon-box secondary"><i data-lucide="users"></i></div>
+                        <div class="icon-box"><i data-lucide="shield"></i></div>
+                        <div class="icon-box secondary"><i data-lucide="calendar"></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Componentes UI -->
+            <section id="components" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Componentes de UI</h2>
+                    <p class="section-subtitle">Elementos interativos fundamentais da plataforma.</p>
+                </div>
+
+                <div class="components-grid">
+                    <div>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-gray);">Botões</h3>
+                        <div class="component-row">
+                            <button class="btn btn-primary">Assinar Agora <i data-lucide="arrow-right" style="width: 18px;"></i></button>
+                            <button class="btn btn-outline">Conhecer Planos</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-gray);">Badges / Chips</h3>
+                        <div class="component-row">
+                            <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 9999px; background: rgba(63, 120, 148, 0.1); color: var(--primary); font-weight: 600; font-size: 0.875rem;">Quem Somos</span>
+                            <span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 9999px; background: rgba(234, 165, 63, 0.1); color: var(--secondary); font-weight: 600; font-size: 0.875rem;">Assinaturas</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-gray);">Cards de Serviço (Glass/Dark)</h3>
+                        <div class="component-row" style="background: white;">
+                            <div class="glass-card">
+                                <div class="icon-box" style="background: rgba(255,255,255,0.15); color: white; margin-bottom: 1rem;">
+                                    <i data-lucide="cpu"></i>
+                                </div>
+                                <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.25rem;">Tecnologia de Ponta</h3>
+                                <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Desenvolvida com as tecnologias mais avançadas do mercado de saúde digital.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Inicializar Ícones -->
+    <script>
+        lucide.createIcons();
+        
+        // Smooth scroll para a navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Remove classe ativa atual
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Adiciona na clicada
+                this.classList.add('active');
+                
+                // Rola suavemente
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

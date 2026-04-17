@@ -49,3 +49,140 @@ body {
 .icon-scale:hover i {
     transform: scale(1.1);
 }
+
+/* Custom Contact Form (based on Uiverse) */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 28px;
+    position: relative;
+    background: linear-gradient(to top, rgb(30, 64, 80), rgb(63, 120, 148));
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-form .title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #eaa53f;
+    margin-bottom: 2px;
+}
+
+.contact-form .title::before,
+.contact-form .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #eaa53f;
+}
+
+.contact-form .title::after {
+    animation: form-pulse 1s linear infinite;
+}
+
+.contact-form .message {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.contact-form label {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.contact-form label .input {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    width: 100%;
+    padding: 20px 15px 6px 15px;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form label .input:focus {
+    border-color: #eaa53f;
+}
+
+.contact-form label .input + span {
+    color: #666666;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+
+.contact-form label .input:placeholder-shown + span {
+    top: 14px;
+    font-size: 16px;
+}
+
+.contact-form label .input:focus + span,
+.contact-form label .input:valid + span {
+    color: #eaa53f;
+    top: 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.contact-form .submit {
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background-color: #eaa53f;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.contact-form .submit:hover {
+    background-color: #d89230;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(234, 165, 63, 0.2);
+}
+
+
+@keyframes form-pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+

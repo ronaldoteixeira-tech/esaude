@@ -37,7 +37,7 @@
                 <a href="#vantagens" class="text-sm font-medium text-gray-text hover:text-primary transition-colors">Vantagens</a>
                 <a href="#faq" class="text-sm font-medium text-gray-text hover:text-primary transition-colors">FAQ</a>
             </div>
-            <a href="#planos" class="hidden md:inline-flex px-6 py-2.5 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark transition-colors">
+            <a href="#contato" class="hidden md:inline-flex px-6 py-2.5 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark transition-colors">
                 Falar com Consultor
             </a>
         </div>
@@ -69,7 +69,7 @@
                     </p>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#planos" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg w-full sm:w-auto">
+                        <a href="#contato" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg w-full sm:w-auto">
                             QUERO REDUZIR CUSTOS
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </a>
@@ -181,7 +181,7 @@
                         </li>
                     </ul>
 
-                    <a href="#planos" class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg w-full sm:w-auto">
+                    <a href="#contato" class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg w-full sm:w-auto">
                         QUERO CONHECER ESSE MODELO
                     </a>
                 </div>
@@ -268,7 +268,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="#planos" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg">
+                <a href="#contato" class="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-lg">
                     QUERO FACILITAR A ROTINA DO MEU RH
                 </a>
             </div>
@@ -530,17 +530,48 @@
                 </details>
             </div>
 
-            <div class="mt-16 text-center bg-white rounded-3xl p-10 border border-gray-200 shadow-sm" id="contato">
-                <h3 class="text-2xl font-bold text-dark mb-4">Sua empresa está pronta para parar de perder dinheiro?</h3>
-                <p class="text-gray-text mb-8">Fale com nosso time de vendas B2B e solicite uma proposta customizada para seu CNPJ em 5 minutos.</p>
-                <a href="#" class="btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-lg w-full sm:w-auto">
-                    <i data-lucide="message-square" class="w-5 h-5"></i>
-                    FALAR COM UM CONSULTOR ESPECIALISTA
-                </a>
+            <div class="mt-20 max-w-[1100px] mx-auto px-6" id="contato">
+                <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+                    <!-- Box Corporativo (Esquerda) -->
+                    <div class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-200 shadow-sm text-left flex flex-col justify-center transition-all duration-300 hover:shadow-xl">
+                        <h3 class="text-2xl md:text-3xl font-bold text-dark mb-6">Sua empresa está pronta para parar de perder dinheiro?</h3>
+                        <p class="text-gray-text text-lg leading-relaxed">Fale com nosso time de vendas B2B e solicite uma proposta customizada para seu CNPJ em 5 minutos.</p>
+                    </div>
+
+                    <!-- Formulário (Direita) -->
+                    <div class="flex justify-center lg:justify-end">
+                        <form class="contact-form">
+                            <p class="title">Solicitar Proposta</p>
+                            <p class="message">Preencha os dados abaixo e nosso time entrará em contato em breve.</p>
+                            
+                            <div class="w-full">
+
+                                <label>
+                                    <input class="input" type="text" placeholder=" " required="">
+                                    <span>Nome Completo</span>
+                                </label>
+
+                                <label>
+                                    <input class="input" type="tel" placeholder=" " required="">
+                                    <span>Celular (WhatsApp)</span>
+                                </label>
+                                            
+                                <label>
+                                    <input class="input" type="email" placeholder=" " required="">
+                                    <span>E-mail Corporativo</span>
+                                </label> 
+                            </div>
+                            
+                            <a href="https://wa.link/71yn67" target="_blank" class="submit flex items-center justify-center">Enviar Solicitação</a>
+                        </form>
+                    </div>
+                </div>
             </div>
+
 
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer class="relative overflow-hidden gradient-hero pt-16 pb-8 text-white">

@@ -540,29 +540,29 @@
 
                     <!-- Formulário (Direita) -->
                     <div class="flex justify-center lg:justify-end">
-                        <form class="contact-form">
+                        <form class="contact-form" id="leadForm">
                             <p class="title">Solicitar Proposta</p>
                             <p class="message">Preencha os dados abaixo e nosso time entrará em contato em breve.</p>
                             
                             <div class="w-full">
 
                                 <label>
-                                    <input class="input" type="text" placeholder=" " required="">
+                                    <input class="input" type="text" name="nome" placeholder=" " required="">
                                     <span>Nome Completo</span>
                                 </label>
 
                                 <label>
-                                    <input class="input" type="tel" placeholder=" " required="">
+                                    <input class="input" type="tel" name="whatsapp" placeholder=" " required="">
                                     <span>Celular (WhatsApp)</span>
                                 </label>
                                             
                                 <label>
-                                    <input class="input" type="email" placeholder=" " required="">
+                                    <input class="input" type="email" name="email" placeholder=" " required="">
                                     <span>E-mail Corporativo</span>
                                 </label> 
                             </div>
                             
-                            <a href="https://wa.link/71yn67" target="_blank" class="submit flex items-center justify-center">Enviar Solicitação</a>
+                            <button type="submit" id="btnSubmit" class="submit flex items-center justify-center">Enviar Solicitação</button>
                         </form>
                     </div>
                 </div>

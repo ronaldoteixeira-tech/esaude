@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             
             try {
-                // Envia para o Webhook do n8n
-                const response = await fetch('https://n8n.v4lisboatech.com.br/webhook-test/esaudebrasil', {
+                // Envia para o Webhook do n8n (Produção)
+                const response = await fetch('https://n8n.v4lisboatech.com.br/webhook/esaudebrasil', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

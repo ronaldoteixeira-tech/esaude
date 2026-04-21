@@ -4,7 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
+    // Captura de UTMs da URL e preenchimento dos campos ocultos
+    const captureUtms = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+        
+        utms.forEach(utm => {
+            const value = urlParams.get(utm);
+            if (value) {
+                const input = document.getElementById(utm);
+                if (input) {
+                    input.value = value;
+                }
+            }
+        });
+    };
+    captureUtms();
+
     // Manipulação do formulário de contato
+
     const leadForm = document.getElementById('leadForm');
     if (leadForm) {
         leadForm.addEventListener('submit', async (e) => {

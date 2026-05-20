@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Pequeno delay para o usuário ver o feedback de sucesso antes do redirecionamento
                 setTimeout(() => {
-                    window.location.href = 'https://wa.link/71yn67';
+                    window.location.href = 'https://wa.me/5519987800740?text=Olá,%20quero%20saber%20como%20contratar%20para%20a%20minha%20empresa!';
                 }, 800);
 
             } catch (error) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Em caso de erro de rede, ainda assim tentamos enviar para o WhatsApp
                 // para garantir que o lead consiga falar com o consultor
-                window.location.href = 'https://wa.link/71yn67';
+                window.location.href = 'https://wa.me/5519987800740?text=Olá,%20quero%20saber%20como%20contratar%20para%20a%20minha%20empresa!';
             }
         });
     }
